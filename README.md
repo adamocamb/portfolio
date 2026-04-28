@@ -13,16 +13,13 @@ Static GitHub Pages portfolio for Adam O'Camb.
 - `writing.html` - iFixit/technical writing samples
 - `assets/site.css` - Site styling
 - `assets/site.js` - Small progressive enhancements
-- `assets/img/` - Portfolio images and placeholder visuals
+- `assets/img/` - Portfolio images
 
-## Before Publishing
+## Maintenance
 
-Replace the placeholders below before sharing the link:
-
-- LinkedIn and resume PDF links in the site footer
-- Real images or sanitized screenshots for each case study
-- Specific measurable outcomes only where they are safe to disclose
-- iFixit article titles and links in `writing.html`
+- Replace `assets/OCamb_Resume.pdf` when the resume changes.
+- Replace generated project images with real project photos or screenshots when available.
+- Update project outcomes only where the details are safe to disclose.
 
 ## GitHub Pages
 

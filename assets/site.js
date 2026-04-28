@@ -6,11 +6,3 @@ document.querySelectorAll('.site-nav a').forEach((link) => {
     link.setAttribute('aria-current', 'page');
   }
 });
-
-document.querySelectorAll('[data-placeholder-link]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-  });
-  link.setAttribute('title', 'Replace this placeholder before publishing.');
-});
-
