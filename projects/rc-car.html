@@ -25,10 +25,10 @@
         <div>
           <a class="breadcrumb" href="../projects.html">Projects</a>
           <p class="eyebrow">Cal Poly mechatronics project</p>
-          <h1>RC Car Mechatronics Project</h1>
-          <p class="lede">Built and integrated an RC car platform in a mechatronics class, combining mechanical construction, electronics, motor control, embedded logic, and hands-on troubleshooting.</p>
+          <h1>Bluetooth RC Car With Flip-Aware Controls</h1>
+          <p class="lede">Designed, built, wired, programmed, and tested a Bluetooth-controlled RC car that could drive right-side up or upside down by reorienting its controls after a flip.</p>
         </div>
-        <img src="../assets/img/rc-car.png" alt="RC car mechatronics project diagram">
+        <img src="../assets/img/rc-car-photo.jpg" alt="Completed Bluetooth RC car with exposed electronics and drivetrain">
       </section>
 
       <section class="section case-layout">
@@ -36,38 +36,61 @@
           <h2>Snapshot</h2>
           <dl>
             <dt>Context</dt>
-            <dd>Cal Poly mechatronics coursework</dd>
-            <dt>System</dt>
-            <dd>RC vehicle platform with mechanical, electrical, and control integration</dd>
-            <dt>Focus</dt>
-            <dd>Build quality, wiring, sensors/electronics, motor control, debugging</dd>
-            <dt>Portfolio relevance</dt>
-            <dd>Hands-on mechatronics, integration judgment, practical troubleshooting</dd>
+            <dd>Cal Poly ME 405 mechatronics final project</dd>
+            <dt>Team</dt>
+            <dd>Adam O'Camb, Chris Barth, Emily Lopez, Samuel Adler</dd>
+            <dt>Mechanical system</dt>
+            <dd>Delrin chassis, large short-course truck tires, differential drive, steering servo</dd>
+            <dt>Electrical/control system</dt>
+            <dd>ATmega1281, HC-05 Bluetooth, BNO055 IMU, AMT102-V encoder, Maxon GP 32 A motor</dd>
           </dl>
         </aside>
 
         <div class="case-content">
-          <h2>Project Goal</h2>
-          <p>The project was a hands-on mechatronics build: assemble a working RC car platform, integrate electronics and drive control, and make the system reliable enough to operate under real test conditions.</p>
+          <h2>Goal</h2>
+          <p>The base assignment was to build a car that could autonomously execute simple commands such as driving straight or following a commanded turn. Our added challenge was to make the car keep interpreting commands correctly after flipping over, so a clockwise command still drove clockwise even when the vehicle was upside down.</p>
 
-          <h2>Engineering Work</h2>
+          <h2>Mechanical Design</h2>
+          <p>The frame was built from Delrin so the structural plates and supports could be cut from one material. Packaging drove many design decisions: the motor, axles, bearings, board, sensors, servo, and battery all had to fit while staying below the wheel envelope so the car could drive inverted without electronics or hardware dragging on the ground.</p>
           <ul>
-            <li>Built and packaged the mechanical vehicle platform with attention to component mounting, wiring paths, service access, and durability.</li>
-            <li>Integrated electronics for drive control and vehicle operation, including power distribution and signal wiring.</li>
-            <li>Worked through practical troubleshooting across mechanical fit, electrical connections, control behavior, and test performance.</li>
-            <li>Balanced coursework constraints with a build that had to function as a complete electromechanical system.</li>
+            <li>Used large tires to create ground clearance for right-side-up and upside-down operation.</li>
+            <li>Designed around a differential and a single lab motor powered by a 7.2 V battery.</li>
+            <li>Kept standoffs short and used countersunk screws to pull components closer to the frame plate.</li>
+            <li>Mounted the battery between the wheels with Velcro and zip ties so it stayed secure but serviceable.</li>
+            <li>Reworked breadboard placement and wiring with short leads and 90-degree bends to keep electronics inside the rollover envelope.</li>
           </ul>
 
-          <h2>What It Demonstrates</h2>
-          <p>This project is useful evidence for design roles because it shows comfort with more than static mechanical parts. It connects mechanical packaging, electronics, controls, assembly quality, and debugging into one system.</p>
+          <h2>Controls and Electronics</h2>
+          <p>The control system used an ATmega1281 with Bluetooth communication, encoder feedback, IMU orientation sensing, motor drive output, and servo steering. Before writing drivers, the team mapped pinouts and registers from component datasheets so the lab code could be reused on the full vehicle.</p>
+          <p>The software architecture separated user commands, motor PID, servo PID, encoder, IMU, motor output, and servo output into tasks with defined timing and shared data. The flip behavior used orientation data from the IMU to reinterpret commands when the vehicle was upside down.</p>
 
-          <h2>Portfolio Materials to Add</h2>
+          <h2>Testing and Results</h2>
+          <p>We tested the physical package by driving the car both right-side up and upside down, then flipping it over in different ways to confirm that components survived the transition and stayed clear of the ground. In ramp testing, the first version stuttered and did not always continue forward after rollover; after code revisions, the car could flip on the ramp and continue driving as expected.</p>
           <ul>
-            <li>Photos of the finished RC car and internal component layout.</li>
-            <li>Wiring diagram or simplified block diagram of power, control, and motor interfaces.</li>
-            <li>Short notes on the main problems found during testing and how they were fixed.</li>
-            <li>One build photo showing packaging, wiring, or mechanical mounting details.</li>
+            <li>Met the base driving goal, including straight-line driving and commanded steering angles.</li>
+            <li>Bluetooth control consistently sent commands to the car.</li>
+            <li>Implemented the flip modification so the car could reorient driving after multiple rollovers.</li>
+            <li>Did not complete closed-loop servo PID control, so steering could not fully correct itself if it drifted off path.</li>
           </ul>
+
+          <h2>Project Media</h2>
+          <div class="media-grid">
+            <figure>
+              <img src="../assets/img/rc-car-cad.png" alt="CAD model of the RC car">
+              <figcaption>CAD packaging model with chassis plates, tires, differential, motor, and battery envelope.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/img/rc-car-schematic.jpg" alt="Electrical schematic for the RC car">
+              <figcaption>Electrical schematic showing the ATmega1281, encoder, servo, Bluetooth module, IMU, and motor interface.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/img/rc-car-task-diagram.jpg" alt="Task diagram for RC car operation">
+              <figcaption>Task diagram for user input, motor control, servo control, encoder feedback, IMU sensing, and output tasks.</figcaption>
+            </figure>
+          </div>
+
+          <h2>Takeaway</h2>
+          <p>This project was a useful early mechatronics lesson because the hard parts were not isolated to CAD, electronics, or code. The car only worked when packaging, wiring, sensor data, register-level configuration, physical testing, and debugging all came together as one system.</p>
         </div>
       </section>
     </main>

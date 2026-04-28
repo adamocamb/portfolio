@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Senior project case study for a bespoke double A-arm solar car suspension.">
+    <meta name="description" content="Senior project case study for a Cal Poly PROVE Lab solar car double A-arm suspension.">
     <title>Solar Car Double A-Arm Suspension | Adam O'Camb</title>
     <link rel="stylesheet" href="../assets/site.css">
   </head>
@@ -25,10 +25,10 @@
         <div>
           <a class="breadcrumb" href="../projects.html">Projects</a>
           <p class="eyebrow">Cal Poly senior project</p>
-          <h1>Bespoke Double A-Arm Suspension for Solar Car</h1>
-          <p class="lede">Designed suspension geometry for a solar car application, using Lotus Shark for kinematics and coordinating with a teammate who machined the physical components.</p>
+          <h1>Solar Car Suspension</h1>
+          <p class="lede">Designed front suspension geometry for a PROVE Lab solar car, then helped turn the kinematic model into carbon fiber wishbones, machined aluminum hardware, bonded joints, and a physical assembly.</p>
         </div>
-        <img src="../assets/img/solar-suspension.png" alt="Double A-arm suspension geometry diagram for a solar car">
+        <img class="photo-contain" src="../assets/img/solar-suspension-photo.jpg" alt="Completed solar car double A-arm suspension mounted to a plywood display fixture">
       </section>
 
       <section class="section case-layout">
@@ -36,39 +36,62 @@
           <h2>Snapshot</h2>
           <dl>
             <dt>Context</dt>
-            <dd>B.S. Mechanical Engineering senior project, Cal Poly SLO</dd>
+            <dd>Cal Poly mechanical engineering senior project for PROVE Lab</dd>
+            <dt>Team</dt>
+            <dd>Adam O'Camb and Alex Power, sponsored by Dr. Graham Doig / PROVE Lab</dd>
             <dt>System</dt>
-            <dd>Custom double A-arm suspension for solar car packaging and kinematics</dd>
+            <dd>Front double A-arm suspension for a solar car speed-record concept</dd>
             <dt>Tools</dt>
-            <dd>Lotus Shark, CAD, shop/manufacturing coordination</dd>
+            <dd>Lotus Shark, CAD, Abaqus FEA, CNC machining, composite bonding tests</dd>
             <dt>SRAM relevance</dt>
-            <dd>Mechanism geometry, packaging, manufacturability, design tradeoffs</dd>
+            <dd>Mechanism geometry, compact packaging, material/process tradeoffs, verification planning</dd>
           </dl>
         </aside>
 
         <div class="case-content">
-          <h2>Problem</h2>
-          <p>The suspension needed to satisfy packaging constraints while controlling the geometry that matters for predictable vehicle behavior. The work required translating kinematic targets into a manufacturable physical layout.</p>
+          <h2>Goal</h2>
+          <p>PROVE Lab was developing a solar car intended for a straight-line speed-record attempt. The suspension needed to package inside narrow aerodynamic wheel fairings, support a lightweight vehicle at speed, integrate with the carbon fiber chassis, and preserve predictable steering behavior.</p>
+          <p>The main engineering targets included a 70 mph functional speed, 2.5 Hz target natural frequency, less than 0.5 in tire scrub, 0 degree static toe within 2 degrees, quick wheel removal, and a minimum 1.5 factor of safety against yield.</p>
 
-          <h2>Engineering Work</h2>
+          <h2>My Role</h2>
+          <p>My main contribution was the suspension geometry and kinematics. I built the Lotus Shark model, adjusted the controllable hard points around the aerodynamic packaging constraints, and tuned the layout to reduce bump steer, tire scrub, scrub radius, and camber change while preserving a small caster angle for straight-line stability.</p>
           <ul>
-            <li>Modeled suspension geometry in Lotus Shark to study kinematic behavior.</li>
-            <li>Balanced packaging, wheel travel, link geometry, and manufacturability constraints.</li>
-            <li>Coordinated part design and machining handoff with a project partner.</li>
-            <li>Learned how early geometry decisions can make later packaging and fabrication either straightforward or painful.</li>
+            <li>Modeled the suspension in Lotus Shark and evaluated motion parameters through wheel travel.</li>
+            <li>Helped select a double wishbone architecture using carbon fiber tube wishbones and machined metal interfaces.</li>
+            <li>Researched the aluminum-to-carbon bonding process and identified a practical epoxy method that avoided acid etching.</li>
+            <li>Worked through late packaging changes after the aerodynamics team narrowed the wheel fairing, requiring a major front suspension redesign.</li>
           </ul>
 
-          <h2>Portfolio Materials to Add</h2>
-          <ul>
-            <li>Lotus Shark screenshots with annotated geometry targets.</li>
-            <li>CAD image showing packaging envelope and linkage layout.</li>
-            <li>One or two kinematic plots with plain-English explanation.</li>
-            <li>Machined component photos, if available.</li>
-            <li>Short retrospective: what would be changed with current professional experience.</li>
-          </ul>
+          <h2>Design Decisions</h2>
+          <p>The final front suspension used a double A-arm layout with roll-wrapped carbon fiber tubes, 6061-T6 aluminum uprights and inserts, threaded rod ends for adjustment, and a direct-mounted Cane Creek DBair shock. A pull-rod and bell crank package was considered, but the direct shock mount fit the fairing and frame more cleanly while giving a near-linear motion ratio.</p>
+          <p>The redesign moved from the earlier steel fork-style upright concept to a one-sided 6061-T6 aluminum upright. That reduced wheel-attachment width for the tighter fairing, removed weld/notch stress concentrations, and kept the upright to roughly three pounds.</p>
+
+          <h2>Kinematics</h2>
+          <p>The Lotus Shark model produced a layout with 5 degrees caster, near-zero scrub radius, less than 0.1 in modeled scrub, about 0.2 degrees bump steer, 17.07 degrees kingpin angle, 0 degree static toe, 0 degree static camber, and less than 2 degrees camber change.</p>
+          <p>After assembly, basic measurement checks showed the suspension dimensions matched the model, with 0.25 in measured horizontal scrub. That was not identical to the model, but it stayed inside the design tolerance.</p>
+
+          <h2>Manufacturing and Validation</h2>
+          <p>The hardware was designed around real shop constraints. The 17 in aluminum uprights required multiple setups, the top inserts required five setups, and the bottom inserts required nine setups on three-axis Haas VF-2 mills. Several details were revised for manufacturability, including larger fillets, rounded shock-tab corners, and bracket changes to reduce toolpath and setup difficulty.</p>
+          <p>The FMEA identified bonded joints as the most critical failure mode. For the aluminum-to-carbon interfaces, we used West System G/flex epoxy with 80-grit surface prep, acetone cleaning, and 0.007 in glass beads to control bond gap. Two ASME lap shear tests showed no epoxy deformation before the aluminum samples began yielding at about 2000 psi.</p>
+
+          <h2>Project Media</h2>
+          <div class="media-grid solar-media">
+            <figure>
+              <img class="photo-contain" src="../assets/img/solar-suspension-photo.jpg" alt="Completed solar car double A-arm suspension">
+              <figcaption>Completed front suspension assembly mounted to a plywood display fixture.</figcaption>
+            </figure>
+            <figure>
+              <img class="photo-contain" src="../assets/img/solar-suspension-cad.png" alt="CAD model of the solar car double A-arm suspension">
+              <figcaption>CAD model showing the carbon tube A-arms, aluminum upright, rod-end interfaces, and shock package.</figcaption>
+            </figure>
+            <figure>
+              <img class="photo-contain" src="../assets/img/solar-suspension-geometry.jpg" alt="Lotus Shark suspension geometry model">
+              <figcaption>Lotus Shark kinematic model used to tune geometry around wheel-fairing and chassis constraints.</figcaption>
+            </figure>
+          </div>
 
           <h2>Takeaway</h2>
-          <p>This project is useful context for SRAM because front drivetrain design is also mechanism work: compact packaging, motion control, interfaces, manufacturability, and the need to make geometry decisions that survive real-world use.</p>
+          <p>This was an early version of the same engineering pattern I use now: define the real constraints, model the motion, choose materials and interfaces, design around manufacturability, identify the critical failure modes, and test the assumptions that are hardest to trust analytically.</p>
         </div>
       </section>
     </main>
