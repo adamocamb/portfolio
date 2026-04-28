@@ -172,6 +172,13 @@ a {
   object-fit: cover;
 }
 
+.profile-visual img.profile-photo {
+  aspect-ratio: 1 / 1;
+  border: 0;
+  background: transparent;
+  object-fit: contain;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
@@ -658,6 +665,12 @@ p {
   object-fit: contain;
 }
 
+.case-hero img.rack-render,
+.project-row img.rack-render {
+  background: #252f3c;
+  object-fit: contain;
+}
+
 .solar-media figure:first-child {
   grid-column: 1 / -1;
 }
@@ -705,6 +718,7 @@ dd {
 
 .case-content {
   max-width: 760px;
+  min-width: 0;
 }
 
 .case-content h2 {

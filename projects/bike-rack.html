@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Machined aluminum rear bicycle rack design project.">
+    <meta name="description" content="In-progress machined aluminum bikepacking rear rack design project.">
     <title>Machined Aluminum Bike Rack | Adam O'Camb</title>
     <link rel="stylesheet" href="../assets/site.css">
   </head>
@@ -26,9 +26,9 @@
           <a class="breadcrumb" href="../projects.html">Projects</a>
           <p class="eyebrow">Personal Project | In progress</p>
           <h1>Machined Aluminum Rear Bike Rack</h1>
-          <p class="lede">A bicycle-specific design project intended to show the full loop: requirements, CAD, analysis, manufacturing planning, drawings, prototype build, test plan, and iteration.</p>
+          <p class="lede">An in-progress bikepacking rack for my own gravel bike, designed to carry real overnight gear without feeling fragile, sloppy, or overbuilt.</p>
         </div>
-        <img src="../assets/img/bike-rack.png" alt="CAD-style concept image of an aluminum rear bicycle rack">
+        <img class="rack-render" src="../assets/img/bike-rack.png" alt="CAD render of an aluminum rear bicycle rack">
       </section>
 
       <section class="section case-layout">
@@ -36,86 +36,118 @@
           <h2>Snapshot</h2>
           <dl>
             <dt>Status</dt>
-            <dd>Design/modeling started; build not complete yet</dd>
-            <dt>Why it matters</dt>
-            <dd>Public, bike-specific, SRAM-adjacent evidence of mechanical design process</dd>
-            <dt>Tools to use</dt>
-            <dd>Inventor or SolidWorks, Inventor Nastran, shop tools, GD&amp;T drawing package</dd>
-            <dt>Best outcome</dt>
-            <dd>A documented design review, not just a finished accessory</dd>
+            <dd>Requirements and concept selection complete; CAD, prototype, and testing in progress</dd>
+            <dt>Payload target</dt>
+            <dd>20 lb on top of the rack, with rough-gravel load cases sized around a 3x safety factor</dd>
+            <dt>Bag support</dt>
+            <dd>Stable support for a bag with a roughly 5 x 12 in base</dd>
+            <dt>Current direction</dt>
+            <dd>Bolted 6061 aluminum prototype using stock available through the shop</dd>
+            <dt>Open checks</dt>
+            <dd>M5 frame mount capacity, side-load stiffness, fastener retention, and validation test results</dd>
           </dl>
         </aside>
 
         <div class="case-content">
           <h2>Project Goal</h2>
-          <p>Design and build a machined aluminum rear rack that fits a real bike, clears the tire and fender envelope, supports practical cargo loads, is serviceable with normal tools, and can be manufactured with available shop processes.</p>
+          <p>The goal is to build a bikepacking rack that I can actually use and enjoy on rough gravel. It needs to carry a compact rear bag securely, survive dynamic loading, stay reasonably light, avoid annoying bag sway, and be cheap enough that I can prototype without treating every design decision like a production tooling investment.</p>
+          <p>This is also a useful public portfolio project because it is not just a CAD model. It forces the same product-development loop I use professionally: requirements, tradeoffs, load paths, interfaces, manufacturing limits, fastener details, test planning, and iteration after use.</p>
 
-          <h2>Recommended Requirements</h2>
+          <h2>Requirements</h2>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
                   <th>Requirement</th>
-                  <th>Portfolio evidence</th>
+                  <th>Current target</th>
+                  <th>How I plan to verify it</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Load capacity and stiffness target</td>
-                  <td>Hand calculation, FEA load cases, static load test</td>
+                  <td>Payload</td>
+                  <td>Carry at least 20 lb on top of the rack.</td>
+                  <td>Static load test plus ride testing with inspection after rough gravel use.</td>
                 </tr>
                 <tr>
-                  <td>Frame and axle/fender/tire clearance</td>
-                  <td>Interface drawing, CAD screenshots, tolerance stack</td>
+                  <td>Dynamic strength</td>
+                  <td>Use at least a 3x safety factor for rough-gravel loading.</td>
+                  <td>Hand calculations first, then simple FEA and physical overload testing.</td>
                 </tr>
                 <tr>
-                  <td>Manufacturable geometry</td>
-                  <td>DFM notes, operation plan, setup sketches, drawing packet</td>
+                  <td>Bag support</td>
+                  <td>Support a bag with a roughly 5 x 12 in base without sliding or rocking.</td>
+                  <td>Fit check with the actual bag and strap locations before final machining.</td>
                 </tr>
                 <tr>
-                  <td>Fastener retention and serviceability</td>
-                  <td>Torque spec logic, tool-access screenshots, inspection plan</td>
+                  <td>Stiffness</td>
+                  <td>Deflect less than L/240 over the span supporting the bag.</td>
+                  <td>Bench deflection measurement at known loads.</td>
                 </tr>
                 <tr>
-                  <td>Durability under real use</td>
-                  <td>Static overload test, road ride log, post-test inspection photos</td>
+                  <td>Cost</td>
+                  <td>Keep material cost near $60 or less, ideally using stock already available at work.</td>
+                  <td>Track material and hardware cost separately from shop time.</td>
+                </tr>
+                <tr>
+                  <td>Weight</td>
+                  <td>Stay within a pound or two of a typical saddle-mounted bikepacking bag setup.</td>
+                  <td>Weigh prototype parts and compare against the load actually carried.</td>
+                </tr>
+                <tr>
+                  <td>Future expansion</td>
+                  <td>Bonus: side mounting points for small panniers or cages, without creating heel, rock, or sway problems.</td>
+                  <td>Mock up side bags before committing to a higher weight rating.</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>Analysis Plan</h2>
-          <p>Use this as a deliberate chance to ramp Inventor Nastran and show analysis discipline without pretending the model is more accurate than it is.</p>
+          <h2>Concept Tradeoffs</h2>
+          <p>I looked at several ways to make the rack. A welded steel-tube rack is attractive because steel has good fatigue behavior, the weight difference could be small if the tubes are efficient, and the shop has welding capability. The downsides are material cost, bigger bend radii with available 1/2 in tubing, harder bolted accessory mounts on round tube, and the fact that welds are common failure points on racks if the design or execution is not right.</p>
+          <p>I also considered steel tubing with machined aluminum hardware, but that creates extra joining problems. Bolting or bonding steel to aluminum adds corrosion concerns unless the materials are isolated, and it would still leave me with a more complicated assembly.</p>
+          <p>My preferred clean design would be 5052 aluminum bar with bent U-shaped uprights. That would reduce bolted corner joints and make the rack more elegant. The issue is practical: buying the material with shipping pushes the cost up, and bending a roughly 36 in long bar into a controlled U shape is not something I currently have easy access to. I could build a bender, but that adds cost and delays the prototype.</p>
+
+          <h2>Current Direction</h2>
+          <p>For the first build, I am using 6061 aluminum from the machine shop, minimizing bends, and machining brackets so the rack can bolt together instead of depending on tight 90-degree bends or weld quality. This is not the design I would choose for mass production, but it is the fastest and cheapest way to test the load path, fit, and ride behavior on my own bike.</p>
+          <p>The rack will be sized around my frame so the bike itself helps form a structural triangle. That lets me use less material in the rack instead of making a fully self-supporting structure. The tradeoff is that the frame mounting points become critical, especially the single M5 rack/fender-style bolts.</p>
+          <p>Several details still need careful design: features at the upper bracket that carry side load without relying only on aluminum threads, fastener retention for rough gravel, access for field service, and a small way to carry spare M5 bolts.</p>
+
+          <h2>Analysis and Validation Plan</h2>
+          <p>The first weak-link question is the bike interface. I have a note that a typical M5 frame mount may be limited to around 50 lb, which would imply less than about 16 lb per side with a 3x safety factor. I need to verify that number before overbuilding the rest of the rack, because there is no point designing the structure around loads the frame mounts cannot support.</p>
           <ul>
-            <li>Start with free-body diagrams and beam/plate hand calculations for expected stress paths.</li>
-            <li>Run three simple FEA cases: vertical cargo load, side load, and asymmetric pannier load.</li>
-            <li>Show boundary-condition assumptions clearly, especially mounting constraints and load introduction.</li>
-            <li>Compare hand calculations, FEA trends, and physical test results at a few inspection points.</li>
-            <li>Use the result to change geometry, not just to make a colorful plot.</li>
+            <li>Confirm the allowable load for the frame mounting points and chosen M5 hardware.</li>
+            <li>Use free-body diagrams and beam calculations to identify the main load path and bolt reactions.</li>
+            <li>Run simple FEA cases for vertical payload, side-to-side sway, and asymmetric side loading.</li>
+            <li>Bench test vertical deflection and overload strength before riding with gear.</li>
+            <li>Ride the rack on local gravel, then inspect fasteners, bracket interfaces, and any fretting or movement.</li>
           </ul>
 
           <h2>Manufacturing Plan</h2>
           <div class="process-grid">
             <article>
-              <h3>Prototype fit check</h3>
-              <p>3D print or cut simple templates to confirm tire, fender, heel, and tool clearances before machining aluminum.</p>
+              <h3>Frame fit</h3>
+              <p>Measure the bike, tire envelope, heel clearance, seatpost area, and rear mounting points before finalizing the CAD.</p>
             </article>
             <article>
-              <h3>Machined components</h3>
-              <p>Design plates, spacers, and struts around available stock, cutter access, fixturing, deburring, and inspection.</p>
+              <h3>6061 prototype</h3>
+              <p>Machine brackets and flat/angle members from available stock so the first version can be built quickly and revised cheaply.</p>
             </article>
             <article>
-              <h3>Drawing package</h3>
-              <p>Create concise manufacturing drawings with datum logic, critical dimensions, GD&amp;T where useful, and inspection notes.</p>
+              <h3>Fastener details</h3>
+              <p>Design joints so geometry carries side load where possible, instead of relying only on threads and bolt preload.</p>
             </article>
             <article>
               <h3>Validation</h3>
-              <p>Build a simple test fixture or loading method, document before/after inspection, and record any design changes.</p>
+              <p>Use static load, deflection, and post-ride inspection data to decide whether the next version should be bent aluminum, steel tube, or a refined 6061 assembly.</p>
             </article>
           </div>
 
-          <h2>Why This Should Be Built Next</h2>
-          <p>For the SRAM application, this is more valuable than another generic small build. It is bicycle hardware, it can be photographed and explained publicly, it naturally involves mounting interfaces and tolerance decisions, and it gives you a reason to show analysis, shop process, drawings, and validation in a single clean story.</p>
+          <h2>Design References</h2>
+          <p>The rack is loosely inspired by simple, compact bikepacking racks rather than traditional touring racks. The references I am looking at include the Tailfin rack shape, the Mica Rattail Rack, the Relentless Mule Rack, and the Restrap Switch Rack. The design direction I like most is a compact rack that behaves almost like a very rigid saddle bag support, with the option to add small side bags only if the structure and frame mounts justify it.</p>
+
+          <h2>Takeaway</h2>
+          <p>The useful engineering work here is deciding what not to optimize yet. A continuous bent rack would probably be cleaner, and a production version would justify better bending or tube-forming tooling. For a one-off prototype, the right move is to use available 6061, machine simple brackets, test the load path, and learn from a real bikepacking trip before chasing a more elegant final architecture.</p>
         </div>
       </section>
     </main>
