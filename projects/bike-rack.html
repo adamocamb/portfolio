@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Machined aluminum rear bicycle rack design project.">
+    <title>Machined Aluminum Bike Rack | Adam O'Camb</title>
+    <link rel="stylesheet" href="../assets/site.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">AO</span>
+        <span><strong>Adam O'Camb</strong><small>Mechanical Design Engineer</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../projects.html">Projects</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../writing.html">Writing</a>
+      </nav>
+    </header>
+
+    <main class="case-study">
+      <section class="case-hero">
+        <div>
+          <a class="breadcrumb" href="../projects.html">Projects</a>
+          <p class="eyebrow">Public bike project | In progress</p>
+          <h1>Machined Aluminum Rear Bike Rack</h1>
+          <p class="lede">A bicycle-specific design project intended to show the full loop: requirements, CAD, analysis, manufacturing planning, drawings, prototype build, test plan, and iteration.</p>
+        </div>
+        <img src="../assets/img/bike-rack.png" alt="CAD-style concept image of an aluminum rear bicycle rack">
+      </section>
+
+      <section class="section case-layout">
+        <aside class="facts">
+          <h2>Snapshot</h2>
+          <dl>
+            <dt>Status</dt>
+            <dd>Design/modeling started; build not complete yet</dd>
+            <dt>Why it matters</dt>
+            <dd>Public, bike-specific, SRAM-adjacent evidence of mechanical design process</dd>
+            <dt>Tools to use</dt>
+            <dd>Inventor or SolidWorks, Inventor Nastran, shop tools, GD&amp;T drawing package</dd>
+            <dt>Best outcome</dt>
+            <dd>A documented design review, not just a finished accessory</dd>
+          </dl>
+        </aside>
+
+        <div class="case-content">
+          <h2>Project Goal</h2>
+          <p>Design and build a machined aluminum rear rack that fits a real bike, clears the tire and fender envelope, supports practical cargo loads, is serviceable with normal tools, and can be manufactured with available shop processes.</p>
+
+          <h2>Recommended Requirements</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Requirement</th>
+                  <th>Portfolio evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Load capacity and stiffness target</td>
+                  <td>Hand calculation, FEA load cases, static load test</td>
+                </tr>
+                <tr>
+                  <td>Frame and axle/fender/tire clearance</td>
+                  <td>Interface drawing, CAD screenshots, tolerance stack</td>
+                </tr>
+                <tr>
+                  <td>Manufacturable geometry</td>
+                  <td>DFM notes, operation plan, setup sketches, drawing packet</td>
+                </tr>
+                <tr>
+                  <td>Fastener retention and serviceability</td>
+                  <td>Torque spec logic, tool-access screenshots, inspection plan</td>
+                </tr>
+                <tr>
+                  <td>Durability under real use</td>
+                  <td>Static overload test, road ride log, post-test inspection photos</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Analysis Plan</h2>
+          <p>Use this as a deliberate chance to ramp Inventor Nastran and show analysis discipline without pretending the model is more accurate than it is.</p>
+          <ul>
+            <li>Start with free-body diagrams and beam/plate hand calculations for expected stress paths.</li>
+            <li>Run three simple FEA cases: vertical cargo load, side load, and asymmetric pannier load.</li>
+            <li>Show boundary-condition assumptions clearly, especially mounting constraints and load introduction.</li>
+            <li>Compare hand calculations, FEA trends, and physical test results at a few inspection points.</li>
+            <li>Use the result to change geometry, not just to make a colorful plot.</li>
+          </ul>
+
+          <h2>Manufacturing Plan</h2>
+          <div class="process-grid">
+            <article>
+              <h3>Prototype fit check</h3>
+              <p>3D print or cut simple templates to confirm tire, fender, heel, and tool clearances before machining aluminum.</p>
+            </article>
+            <article>
+              <h3>Machined components</h3>
+              <p>Design plates, spacers, and struts around available stock, cutter access, fixturing, deburring, and inspection.</p>
+            </article>
+            <article>
+              <h3>Drawing package</h3>
+              <p>Create concise manufacturing drawings with datum logic, critical dimensions, GD&amp;T where useful, and inspection notes.</p>
+            </article>
+            <article>
+              <h3>Validation</h3>
+              <p>Build a simple test fixture or loading method, document before/after inspection, and record any design changes.</p>
+            </article>
+          </div>
+
+          <h2>Why This Should Be Built Next</h2>
+          <p>For the SRAM application, this is more valuable than another generic small build. It is bicycle hardware, it can be photographed and explained publicly, it naturally involves mounting interfaces and tolerance decisions, and it gives you a reason to show analysis, shop process, drawings, and validation in a single clean story.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Adam O'Camb</strong>
+        <p>Mechanical Design Engineer | San Luis Obispo, CA</p>
+      </div>
+      <div class="footer-links">
+        <a class="linkedin-icon" href="#" data-placeholder-link aria-label="LinkedIn"><span aria-hidden="true">in</span></a>
+        <a href="#" data-placeholder-link>Resume PDF</a>
+      </div>
+    </footer>
+    <script src="../assets/site.js"></script>
+  </body>
+</html>
