@@ -1,18 +1,18 @@
-# SRAM-Focused Engineering Portfolio
+# Engineering Portfolio
 
-Static GitHub Pages portfolio for Adam O'Camb, focused on mechanical design, product development, manufacturing equipment, validation, and cycling-related engineering work.
+Static GitHub Pages portfolio for Adam O'Camb.
 
 ## Structure
 
-- `index.html` - Portfolio home page and SRAM-fit overview
+- `index.html` - Portfolio home page and overview
 - `projects.html` - Simple project index
-- `resume.html` - Web resume summary
-- `projects/bike-rack.html` - Public bike project and recommended next build
-- `projects/solar-car-suspension.html` - Senior project case study
+- `resume.html` - Resume summary for web
+- `projects/bike-rack.html` - Bikepacking rear rack project
+- `projects/solar-car-suspension.html` - Cal Poly senior project
 - `writing.html` - iFixit/technical writing samples
 - `assets/site.css` - Site styling
 - `assets/site.js` - Small progressive enhancements
-- `assets/img/` - Portfolio images and generated placeholder visuals
+- `assets/img/` - Portfolio images and placeholder visuals
 
 ## Before Publishing
 
