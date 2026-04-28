@@ -8,6 +8,7 @@ Static GitHub Pages portfolio for Adam O'Camb.
 - `projects.html` - Simple project index
 - `resume.html` - Resume summary for web
 - `projects/bike-rack.html` - Bikepacking rear rack project
+- `projects/rc-car.html` - Mechatronics class RC car project
 - `projects/solar-car-suspension.html` - Cal Poly senior project
 - `writing.html` - iFixit/technical writing samples
 - `assets/site.css` - Site styling
