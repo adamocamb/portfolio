@@ -18,9 +18,4 @@ Static GitHub Pages portfolio for Adam O'Camb.
 ## Maintenance
 
 - Replace `assets/OCamb_Resume.pdf` when the resume changes.
-- Replace generated project images with real project photos or screenshots when available.
 - Update project outcomes only where the details are safe to disclose.
-
-## GitHub Pages
-
-The site is plain HTML/CSS/JS. In GitHub, enable Pages from the repository settings and publish from the root of the default branch.
