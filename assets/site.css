@@ -785,7 +785,7 @@ dd {
 
 table {
   width: 100%;
-  min-width: 650px;
+  min-width: 0;
   border-collapse: collapse;
 }
 
@@ -795,6 +795,7 @@ td {
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
+  overflow-wrap: anywhere;
 }
 
 th {
@@ -802,6 +803,77 @@ th {
   color: #3f454c;
   font-size: 0.84rem;
   text-transform: uppercase;
+}
+
+.requirements-table {
+  table-layout: fixed;
+}
+
+.requirements-table thead th:first-child {
+  width: 24%;
+}
+
+.requirements-table thead th:nth-child(2) {
+  width: 30%;
+}
+
+.requirements-table tbody th {
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-transform: none;
+}
+
+@media (max-width: 600px) {
+  .requirements-table,
+  .requirements-table tbody,
+  .requirements-table tr,
+  .requirements-table th,
+  .requirements-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .requirements-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .requirements-table tbody tr {
+    padding: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .requirements-table tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .requirements-table tbody th,
+  .requirements-table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .requirements-table tbody th {
+    font-weight: 700;
+  }
+
+  .requirements-table td {
+    margin-top: 12px;
+  }
+
+  .requirements-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 4px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
 }
 
 .gallery-grid {
