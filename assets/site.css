@@ -385,6 +385,7 @@ p {
 
 .project-row img {
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 10;
   border: 1px solid var(--line);
   background: var(--paper);
@@ -669,6 +670,22 @@ p {
 .project-row img.rack-render {
   background: #252f3c;
   object-fit: contain;
+}
+
+.case-hero img.rack-photo {
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+
+.project-figure {
+  margin: 28px 0;
+}
+
+.project-figure img.rack-model {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 981 / 995;
+  border: 1px solid var(--line);
 }
 
 .solar-media figure:first-child {

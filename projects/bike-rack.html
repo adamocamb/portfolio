@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="In-progress machined aluminum bikepacking rear rack design project.">
+    <meta name="description" content="Custom aluminum bikepacking rack: mechanical design, printed prototypes and fixtures, machining, bending, and results from a two-day trip.">
     <title>Machined Aluminum Bike Rack | Adam O'Camb</title>
     <link rel="stylesheet" href="../assets/site.css">
   </head>
@@ -24,11 +24,11 @@
       <section class="case-hero">
         <div>
           <a class="breadcrumb" href="../projects.html">Projects</a>
-          <p class="eyebrow">Personal Project | In progress</p>
+          <p class="eyebrow">Personal Project | Built and ridden</p>
           <h1>Machined Aluminum Rear Bike Rack</h1>
-          <p class="lede">An in-progress bikepacking rack for my own gravel bike, designed to carry overnight gear without feeling fragile, sloppy, or overbuilt.</p>
+          <p class="lede">A custom aluminum bikepacking rack designed, machined, and fitted to my own bike. The finished rack carried an over-packed bag on a two-day trip and came off easily when it was time to ride without luggage.</p>
         </div>
-        <img class="rack-render" src="../assets/img/bike-rack.png" alt="CAD render of an aluminum rear bicycle rack">
+        <img class="rack-photo" src="../assets/img/bike-rack-finished.jpg" alt="Finished aluminum rack mounted on my bike, showing the machined seatpost interface, quick release, horizontal beams, and uprights" width="4032" height="3024">
       </section>
 
       <section class="section case-layout">
@@ -36,22 +36,22 @@
           <h2>Snapshot</h2>
           <dl>
             <dt>Status</dt>
-            <dd>Requirements and concept selection complete; CAD, prototype, and testing in progress</dd>
+            <dd>Built, assembled, and used on a two-day bikepacking trip; refinement ongoing</dd>
             <dt>Payload target</dt>
-            <dd>20 lb on top of the rack, with rough-gravel load cases sized around a 3x safety factor</dd>
+            <dd>Original design target: 20 lb. A measured load rating has not yet been established.</dd>
             <dt>Bag support</dt>
-            <dd>Stable support for a bag with a roughly 5 x 12 in base</dd>
-            <dt>Current direction</dt>
-            <dd>Bolted 6061 aluminum prototype using stock available through the shop</dd>
-            <dt>Open checks</dt>
-            <dd>M5 frame mount capacity, side-load stiffness, fastener retention, and validation test results</dd>
+            <dd>Designed around a 5 x 12 in base; the intended bag fit, with slight forward strap migration during use</dd>
+            <dt>Build methods</dt>
+            <dd>6061 aluminum, CNC and manual machining, lathe-turned sleeves, printed prototypes and fixtures, custom bending jig</dd>
+            <dt>Next iteration</dt>
+            <dd>Reduce weight, refine the seatpost bracket, enlarge chamfers, and improve strap retention. FEA and quantitative load/deflection tests remain open.</dd>
           </dl>
         </aside>
 
         <div class="case-content">
           <h2>Project Goal</h2>
-          <p>The goal is to build a bikepacking rack that I can use and enjoy on rough gravel. It needs to carry a compact rear bag securely, survive dynamic loading, stay reasonably light, avoid annoying bag sway, and be cheap enough that I can prototype without treating every design decision like a production tooling investment.</p>
-          <p>This is also a useful portfolio project because it is not just a CAD model. It forces the same product-development loop I use professionally: requirements, tradeoffs, load paths, interfaces, manufacturing limits, fastener details, test planning, and iteration after use.</p>
+          <p>I wanted a rack I could enjoy using on rough gravel: stable support for overnight gear, straightforward assembly and removal, and a close fit to my bike and bag. Keeping the load close to me while preserving leg clearance was central to the design.</p>
+          <p>I chose shop-available 6061 aluminum and machined, bolted interfaces to keep the first build affordable and easy to revise. For this version I favored a sturdy structure and practical manufacturing over minimum weight.</p>
 
           <h2>Requirements</h2>
           <div class="table-wrap">
@@ -59,99 +59,92 @@
               <thead>
                 <tr>
                   <th>Requirement</th>
-                  <th>Current target</th>
-                  <th>How I plan to verify it</th>
+                  <th>Original target</th>
+                  <th>Current evidence</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Payload</td>
-                  <td>Carry at least 20 lb on top of the rack.</td>
-                  <td>Hand calculations, static load test plus ride testing with inspection after rough gravel use.</td>
+                  <td>Carry at least 20 lb on top.</td>
+                  <td>Carried an over-packed bag on a two-day trip; actual payload was not recorded, so the 20 lb rating remains unverified.</td>
                 </tr>
                 <tr>
                   <td>Dynamic strength</td>
-                  <td>Use at least a 3x safety factor for rough-gravel loading.</td>
-                  <td>Hand calculations first, then simple FEA and physical overload testing.</td>
+                  <td>Target a 3x safety factor for rough-gravel loading.</td>
+                  <td>Preliminary hand calculations informed sizing. FEA and controlled load testing have not yet confirmed the strength margin.</td>
                 </tr>
                 <tr>
                   <td>Bag support</td>
-                  <td>Support a bag with a roughly 5 x 12 in base without sliding or rocking.</td>
-                  <td>Wood mock-up and fit check with the actual bag and strap locations before final machining.</td>
+                  <td>Support a bag with a roughly 5 x 12 in base.</td>
+                  <td>The intended bag fit perfectly. Slight forward sliding identified an opportunity to improve strap retention.</td>
                 </tr>
                 <tr>
                   <td>Stiffness</td>
-                  <td>Deflect less than L/240 over the span supporting the bag.</td>
-                  <td>Hand calculations, then deflection measurement at known loads on an isolated bar.</td>
+                  <td>Deflection below L/240 over the bag-support span.</td>
+                  <td>No noticeable rack flex or joint movement during the trip. Deflection has not been measured against this target.</td>
                 </tr>
                 <tr>
                   <td>Cost</td>
-                  <td>Keep material cost near $60 or less, ideally using stock already available at work.</td>
-                  <td>Track material and hardware cost separately from shop time.</td>
+                  <td>Material cost around $60 or less.</td>
+                  <td>Used available shop stock to control cost; final material and hardware costs have not been tallied here.</td>
                 </tr>
                 <tr>
                   <td>Weight</td>
-                  <td>Stay within a pound or two of a typical saddle-mounted bikepacking bag.</td>
-                  <td>Weigh prototype parts and compare to a typical saddle bag.</td>
+                  <td>Within 1-2 lb of a typical saddle-mounted bikepacking bag.</td>
+                  <td>The first version favors strength. Final weight comparison and material reduction remain for the next iteration.</td>
+                </tr>
+                <tr>
+                  <td>Serviceability</td>
+                  <td>Simple assembly and removal for everyday riding.</td>
+                  <td>Bolted onto the bike without adjustment; removed easily in a hotel room after the bikepacking portion of the trip.</td>
                 </tr>
                 <tr>
                   <td>Future expansion</td>
-                  <td>Bonus: side mounting points for small panniers or cages.</td>
-                  <td>Hand calculations, simple FEA. Mock up side bags before committing to a higher weight rating.</td>
+                  <td>Optional side mounting points for small panniers or cages.</td>
+                  <td>Side-bag fit and capacity remain outside the tested scope of this version.</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h2>Concept Tradeoffs</h2>
-          <p>I looked at several ways to make the rack. A welded steel-tube rack is attractive because steel has good fatigue behavior, the weight difference could be small if the tubes are efficient, and we have welding capability. The downsides are material cost, bigger bend radii with the available 1/2 in tubing, harder to bolt accessory mounts on round tube, and the fact that welds are common failure points on racks if the design or execution is not right (especially when I'm welding).</p>
-          <p>I also considered steel tubing with machined aluminum hardware, but that creates extra joining problems. Bolting or bonding steel to aluminum adds corrosion concerns unless the materials are isolated, and it would still leave me with a more complicated assembly.</p>
-          <p>My preferred design would be 5052 aluminum bar bent in a U-shaped for the uprights. That would reduce bolted corner joints and simplify the rack. The issue is that buying the material with shipping pushes the cost up, and bending a roughly 36 in long bar into a controlled U shape is not something I currently have easy access to. I'm confident I could build a bender, but that adds cost and delays the prototype.</p>
+          <h2>Material and Process Tradeoffs</h2>
+          <p>I considered welded steel tube, steel tubing with aluminum fittings, and bent 5052 aluminum bar. Each introduced a different constraint: tube bending and accessory attachment, joining dissimilar materials, material cost, or access to bending equipment. Available 6061 stock and machined brackets made a bolted design practical for a one-off build.</p>
+          <p>The layout uses the bike frame to complete a structural triangle, with the rack sized specifically for the mounting points and bag. That fit limits adjustment for a different bike. A production version would warrant another look at formed parts, assembly time, fastener count, and tooling cost.</p>
 
-          <h2>Current Direction</h2>
-          <p>For the first build, I am using 6061 aluminum from the machine shop, minimizing bends, and machining brackets so the rack can bolt together instead of depending on tight 90-degree bends or welds. This is not the design I would choose for mass production, but it is the fastest and cheapest way to test the loading, fit, and ride behavior on my own bike. And I want this in time for an upcoming trip!</p>
-          <p>The rack will be sized around my frame so the bike itself helps form a structural triangle. That lets me use less material in the rack instead of making a fully self-supporting structure. The trade-off is it's not overly adjustable if I get a new bike.</p>
-          <p>Several details still need careful design: features at the upper bracket that carry side load without relying only on aluminum threads and M5 bolts, removable fastener retention for rough gravel, and a spot to carry spare M5 bolts.</p>
+          <h2>Design Iteration</h2>
+          <p>The original plan used a seatpost bracket I found in a bike shop junk box. It turned out to be too small for my seatpost, so I designed and machined the entire interface. A quick release made removal convenient without adding many tools to my riding kit.</p>
+          <p>I used 3D-printed versions of the seatpost bracket to iterate on its angle. The final position kept the top of the rack near level, cleared my legs while pedaling, and kept the load close to me. I also streamlined the bracket joining the uprights to the horizontal beams: angled slots support and locate the uprights while reducing the number of bolts.</p>
 
-          <h2>Analysis and Validation Plan</h2>
-          <p>The first weak-link question is the bike interface. I have a note that a typical M5 frame mount may be limited to around 50 lb, which would imply less than about 16 lb per side with a 3x safety factor. I need to verify that number before building the rest of the rack, because there is no point designing the structure around loads the frame mounts cannot support.</p>
+          <figure class="project-figure">
+            <img class="rack-model" src="../assets/img/bike-rack-updated-model.png" alt="Updated rack CAD assembly showing the custom seatpost bracket, connecting sleeves, horizontal beams, and slotted upright bracket" width="981" height="995" loading="lazy">
+            <figcaption>Updated assembly with the custom seatpost interface and slotted support bracket. Printed prototypes helped establish the fit before machining.</figcaption>
+          </figure>
+
+          <h2>Making the Parts</h2>
           <ul>
-            <li>Confirm the allowable load for the frame mounting points and chosen M5 hardware.</li>
-            <li>Use free-body diagrams and beam and buckling calculations to identify the main load path and bolt reactions.</li>
-            <li>Run simple FEA cases for vertical payload, side-to-side sway, and asymmetric top loading.</li>
-            <li>Bench test vertical deflection and overload strength with test stock.</li>
-            <li>Ride the rack on local gravel, then inspect fasteners, bracket interfaces, and any fatigue or movement.</li>
+            <li><strong>Bending:</strong> I made a jig to produce matching 2.5 in radius bends in both upright legs. The resulting bends were very close to the intended geometry.</li>
+            <li><strong>Mill fixturing:</strong> I designed and 3D-printed a fixture to hold the connecting bracket for machining its angled upright slots.</li>
+            <li><strong>Turning:</strong> I manually turned the sleeves connecting the horizontal beams to the seatpost bracket on a lathe.</li>
+            <li><strong>Assembly:</strong> I prioritized simple assembly and disassembly, useful clearance, and versatility, accepting extra material in the first version.</li>
           </ul>
 
-          <h2>Manufacturing Plan</h2>
-          <div class="process-grid">
-            <article>
-              <h3>Frame fit</h3>
-              <p>Measure the bike, tire envelope, heel clearance, seatpost area, and rear mounting points before finalizing the CAD. Make a wood or cardboard mock-up.</p>
-            </article>
-            <article>
-              <h3>Refine details</h3>
-              <p>Refine fit and design. Design joints so geometry carries side load where possible, instead of relying only on threads and bolt preload.</p>
-            </article>
-            <article>
-              <h3>6061 prototype</h3>
-              <p>Machine brackets and flat/angle members from available stock so the first version can be built quickly and revised cheaply. Test static load on beams to confirm hand calculations.</p>
-            </article>
-            <article>
-              <h3>Validation</h3>
-              <p>Load it up and go on a ride! Inspect, take notes, use data to improve the next version.</p>
-            </article>
-              <article>
-              <h3>Have fun!</h3>
-              <p>Go on a cool trip and have fun carrying gear on your sweet homemade rack!</p>
-            </article>
-          </div>
+          <h2>Fit and Trip Results</h2>
+          <p>The finished rack bolted directly onto my bike without adjustment, and the bag it was designed around fit perfectly. On a two-day trip it worked well with an over-packed bag, with no noticeable rack flex or joint movement. After the bikepacking portion, I removed the rack easily in our hotel room to go for a ride.</p>
+          <p>The bag did slide forward slightly. That observation gives the next version a specific usability improvement: slots or recesses in the horizontal beams to keep the straps in position.</p>
+
+          <h2>Next Iteration</h2>
+          <ul>
+            <li>Trim the uprights, which are heavier and more substantial than I want for the next version.</li>
+            <li>Add larger chamfers to sharp edges overlooked in the first build.</li>
+            <li>Refine the seatpost bracket shape; it was added late in the project and had limited optimization time.</li>
+            <li>Explore strap-locating features to prevent the bag migrating forward.</li>
+            <li>Use FEA and measured load/deflection tests to guide material removal and check the rack, joints, and bike interfaces against the original targets.</li>
+          </ul>
+          <p>The first trip established a useful fit and usability baseline. The next design pass will focus on reducing weight and improving finishing details, supported by analysis and more quantitative testing.</p>
 
           <h2>Design References</h2>
-          <p>The rack is loosely inspired by simple, compact bikepacking racks rather than traditional touring racks. The references I am looking at include the Tailfin racks, the Mica Rattail rack, the Relentless Mule rack, and the Restrap Switch rack. The design direction I like most is a compact rack that behaves almost like a very rigid saddle bag support, with the option to add small side bags only if the structure and frame mounts allow it.</p>
-
-          <h2>Takeaway</h2>
-          <p>I'm building this partly to get myself a cheap bikepacking rack, and partly to improve my design skills, hand calculation, and CNC milling skills. I've also had to make hard design choices based on priorities. A bent rack would probably be cleaner, and a production version would justify better bending or tube-forming tooling. For a one-off rack prioritizing cost and using materials already available to me, I'm choosing 6061 and a bolted assembly.</p>
+          <p>I drew inspiration from compact bikepacking racks such as Tailfin racks, the Mica Rattail, the Relentless Mule, and the Restrap Switch. The aim was a simple support for a rear bag, with small side bags a possible future addition.</p>
         </div>
       </section>
     </main>
